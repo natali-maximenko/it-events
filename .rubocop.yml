@@ -102,6 +102,9 @@ Style/FrozenStringLiteralComment:
 Style/Documentation:
   Enabled: false
 
+Style/EmptyMethod:
+  Enabled: false
+
 # Detect hard tabs, no hard tabs.
 Layout/Tab:
   Enabled: true
