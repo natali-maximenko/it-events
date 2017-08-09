@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: afisha_test
+  username: postgres
