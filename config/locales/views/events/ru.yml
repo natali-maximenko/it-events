@@ -2,19 +2,20 @@
 ru:
   events:
     index:
-      header: 'Список событий'
-      actions: 'Действия'
-      add: 'Добавить событие'
+      header: Список событий
+      actions: Действия
+      add: Добавить событие
     new:
-      header: 'Новое событие'
+      header: Новое событие
     edit:
-      header: 'Редактирование события'
+      header: Редактирование события
     form:
       title: Название
       description: Описание
-      cover: Обложка
+      cover: Выберите обложку
       started_at: Дата начала
       link: Внешняя ссылка
+      picture_url: или укажите ссылку на картинку
       create: Создать
       save: Сохранить
       update: Сохранить

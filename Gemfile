@@ -22,6 +22,10 @@ gem 'uglifier'
 gem 'dotenv-rails'
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'fog-aws'
+gem 'aws-sdk'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'

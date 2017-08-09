@@ -1,4 +1,9 @@
 <p>
+    <strong>started_at: </strong>
+    <%= l(@event.started_at, format: :long) %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @event.title %>
 </p>
@@ -9,13 +14,7 @@
 </p>
 
 <p>
-  <strong>cover: </strong>
-  <%= @event.cover %>
-</p>
-
-<p>
-    <strong>started_at: </strong>
-    <%= l(@event.started_at, format: :long) %>
+  <%= image_tag @event.cover.url %>
 </p>
 
 <p>
