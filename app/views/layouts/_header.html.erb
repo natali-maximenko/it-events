@@ -1,0 +1,29 @@
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><%= t('brand') %></a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><%= link_to t('events_list'), events_path %></li>
+          <!-- <li>organizers link</li> -->
+        </ul>
+        <!-- user nav
+        <ul class="nav navbar-nav navbar-right">
+          <li>login</li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">email <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li>edit profile</li>
+              <li role="separator" class="divider"></li>
+              <li>logout</li>
+            </ul>
+          </li>
+        </ul>
+        -->
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,26 @@
+<p>
+  <strong>Title:</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>cover: </strong>
+  <%= @event.cover %>
+</p>
+
+<p>
+    <strong>started_at: </strong>
+    <%= l(@event.started_at, format: :long) %>
+</p>
+
+<p>
+    <strong>link: </strong>
+    <%= link_to @event.link, @event.link %>
+</p>
+
+<%= link_to t('back'), events_path %>

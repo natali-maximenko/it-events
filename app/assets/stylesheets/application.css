@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+
+/* MISC */
+
+.clearfix:after {content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;} html[xmlns].clearfix{display:block;} * html .clearfix{height:1%;}
