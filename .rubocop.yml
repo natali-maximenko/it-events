@@ -4,6 +4,7 @@ AllCops:
     - 'spec/**/*'
     - 'config/**/*.rb'
     - 'db/**/*.rb'
+    - 'test/**/*'
 
 # Prefer &&/|| over and/or.
 Style/AndOr:
@@ -93,6 +94,9 @@ Layout/SpaceInsideParens:
 Style/StringLiterals:
   Enabled: false
   EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
 
 # Detect hard tabs, no hard tabs.
 Layout/Tab:
