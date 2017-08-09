@@ -5,6 +5,7 @@ AllCops:
     - 'config/**/*.rb'
     - 'db/**/*.rb'
     - 'test/**/*'
+    - 'app/assets/**/*'
 
 # Prefer &&/|| over and/or.
 Style/AndOr:
@@ -96,6 +97,9 @@ Style/StringLiterals:
   EnforcedStyle: double_quotes
 
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
   Enabled: false
 
 # Detect hard tabs, no hard tabs.
