@@ -1,13 +1,9 @@
-<div class="row">
-  <div class="col-xs-6">
-    <h2><%= t '.header' %></h2>
-    <%= render 'form' %>
-  </div>
-</div>
+<h3><%= t '.header' %></h3>
+<%= render 'list' %>
 <% content_for :sidebar do %>
   <div class="list-group">
+    <%= link_to t('.add'), new_event_path, class: 'list-group-item' %>
     <%= link_to t('.all'), events_path, class: 'list-group-item' %>
-    <%= link_to t('.past'), past_path, class: 'list-group-item' %>
     <%= link_to t('.upcoming'), upcoming_path, class: 'list-group-item' %>
   </div>
 <% end %>

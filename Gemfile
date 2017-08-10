@@ -26,6 +26,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'aws-sdk'
+gem 'will_paginate'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'

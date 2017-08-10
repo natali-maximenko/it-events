@@ -1,0 +1,24 @@
+<%= form_tag request.path, method: 'get' do %>
+  <%= content_tag :label do %>
+    C:
+    <%= text_field_tag :start_date, params[:start_date] %>
+  <% end %>
+  <%= content_tag :label do %>
+    по:
+    <%= text_field_tag :end_date, params[:end_date] %>
+  <% end %>
+  <%= submit_tag 'Search' %>
+<% end %>
+<div class="album">
+<% @events.each do |event| %>
+<div class="card">
+  <%= image_tag event.cover.url %>
+  <h2><%= event.title %></h2>
+  <p class="card-text"><%= l(event.started_at, format: :long) %></p>
+  <%= link_to t('show'), event_path(event), class: 'btn btn-secondary' %>
+</div>
+<% end %>
+</div>
+<div class='apple_pagination'>
+<%= will_paginate @events %>
+</div>

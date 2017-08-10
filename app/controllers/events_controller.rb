@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :find_event, only: [:edit, :update, :show, :destroy]
 
   def index
-    @events = Event.all
+    @events = Event.filter(search_params).paginate(page: params[:page])
   end
 
   def new
@@ -38,10 +38,22 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
+  def past
+    @events = Event.past.filter(search_params).paginate(page: params[:page])
+  end
+
+  def upcoming
+    @events = Event.upcoming.filter(search_params).paginate(page: params[:page])
+  end
+
 private
 
   def event_params
     params.require(:event).permit(:title, :description, :cover, :started_at, :link, :remote_cover_url)
+  end
+
+  def search_params
+    params.permit(:start_date, :end_date)
   end
 
   def find_event
