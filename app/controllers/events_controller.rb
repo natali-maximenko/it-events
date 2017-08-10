@@ -19,8 +19,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @event.update(event_params)
@@ -30,8 +29,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def destroy
     @event.destroy
@@ -46,7 +44,7 @@ class EventsController < ApplicationController
     @events = Event.upcoming.filter(search_params).paginate(page: params[:page])
   end
 
-private
+  private
 
   def event_params
     params.require(:event).permit(:title, :description, :cover, :started_at, :link, :remote_cover_url)

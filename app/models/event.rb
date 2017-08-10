@@ -11,8 +11,8 @@ class Event < ApplicationRecord
   scope :past, -> { where('started_at <= ?', Time.now).order_started_at_desc }
   scope :upcoming, -> { where('started_at > ?', Time.now).order_started_at_desc }
   # filter
-  scope :start_date, ->(date) {  where('started_at >= ?', date) }
-  scope :end_date, ->(date) {  where('started_at <= ?', date) }
+  scope :start_date, ->(date) { where('started_at >= ?', date) }
+  scope :end_date, ->(date) { where('started_at <= ?', date) }
 
   def self.filter(attrs)
     events = order_started_at_desc
