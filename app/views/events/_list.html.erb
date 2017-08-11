@@ -1,12 +1,12 @@
 <%= form_tag request.path, method: 'get', class: 'form-inline' do %>
   <%= content_tag :label do %>
     <%= t('start_date') %>:
-    <%= text_field_tag :start_date, params[:start_date], class: 'form-control'  %>
+    <%= text_field_tag :start_date, params[:start_date], class: 'form-control datepicker'  %>
   <% end %>
 
   <%= content_tag :label do %>
     <%= t('end_date') %>:
-    <%= text_field_tag :end_date, params[:end_date], class: 'form-control'  %>
+    <%= text_field_tag :end_date, params[:end_date], class: 'form-control datepicker'  %>
   <% end %>
 
   <%= content_tag :label do %>
@@ -60,6 +60,10 @@
 </div>
 
 <script type="text/javascript">
+$('.datepicker').datepicker({
+  dateFormat: 'yy-mm-dd'
+});
+$('.datepicker').datepicker( $.datepicker.regional[ "ru" ] );
 $("#address").suggestions({
     token: "<%= ENV['DADATA_API_KEY'] %>",
     type: "ADDRESS",
