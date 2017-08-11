@@ -22,6 +22,11 @@ gem 'uglifier'
 gem 'dotenv-rails'
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'fog-aws'
+gem 'aws-sdk'
+gem 'will_paginate'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'
@@ -38,7 +43,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  #gem 'factory_girl_rails'
 end
 
 group :test do
