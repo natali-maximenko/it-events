@@ -47,7 +47,16 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :description, :cover, :started_at, :link, :remote_cover_url, :address)
+    attrs = [
+      :title,
+      :description,
+      :cover,
+      :remote_cover_url,
+      :started_at,
+      :link,
+      :address
+    ]
+    params.require(:event).permit(attrs)
   end
 
   def search_params
