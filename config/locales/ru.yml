@@ -29,6 +29,9 @@ ru:
   select: 'Выберите'
   email: 'Email'
   password: 'Пароль'
+  search: 'Найти'
+  start_date: 'С'
+  end_date: 'По'
 
   will_paginate:
     previous_label: "&#8592; Назад"
