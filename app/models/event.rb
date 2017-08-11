@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   validates :title, presence: true, length: { minimum: 5 }
   validates :description, presence: true, length: { minimum: 15 }
   validates :started_at, presence: true
+  validates :address, presence: true
 
   mount_uploader :cover, PictureUploader
   # paging
@@ -13,6 +14,7 @@ class Event < ApplicationRecord
   # filter
   scope :start_date, ->(date) { where('started_at >= ?', date) }
   scope :end_date, ->(date) { where('started_at <= ?', date) }
+  scope :address, ->(address) { where('address like ?', "%#{address.strip}%") }
 
   def self.filter(attrs)
     events = order_started_at_desc

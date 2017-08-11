@@ -32,6 +32,7 @@ ru:
   search: 'Найти'
   start_date: 'С'
   end_date: 'По'
+  address: 'Адрес'
 
   will_paginate:
     previous_label: "&#8592; Назад"

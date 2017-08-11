@@ -47,11 +47,11 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :description, :cover, :started_at, :link, :remote_cover_url)
+    params.require(:event).permit(:title, :description, :cover, :started_at, :link, :remote_cover_url, :address)
   end
 
   def search_params
-    params.permit(:start_date, :end_date)
+    params.permit(:start_date, :end_date, :address)
   end
 
   def find_event
