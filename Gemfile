@@ -28,6 +28,8 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'aws-sdk'
 gem 'will_paginate'
+gem 'slim-rails'
+gem 'font-awesome-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'

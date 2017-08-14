@@ -1,0 +1,32 @@
+= simple_form_for @event, html: { class: 'form-horizontal' } do |f|
+  - if @event.errors.any?
+    #error_explanation
+      h2
+        = t('activerecord.errors.messages.record_invalid', errors: @event.errors.count)
+      ul
+        - @event.errors.full_messages.each do |msg|
+          li= msg
+  = f.input :title, label: t('.title')
+  = f.input :description, label: t('.description')
+  = f.input :address, label: t('.address')
+  - if @event.new_record?
+    .form-group
+      = f.label :started_at, t('.started_at')
+      = datetime_select :event, :started_at
+  = f.input :cover, label: t('.cover'), as: :file
+  = f.input :remote_cover_url, label: t('.picture_url')
+  - if @event.cover.url
+    .form-group
+      = image_tag @event.cover.url(:thumb)
+  = f.input :link, label: t('.link')
+  .actions.form-group
+    = f.button :submit, @event.new_record? ? t('.create') : t('.save')
+javascript:
+  | $("#event_address").suggestions({
+      | token: "#{ENV['DADATA_API_KEY']}",
+      | type: "ADDRESS",
+      | onSelect: function(suggestion) {
+          | console.log(suggestion);
+      | }
+  | });
+

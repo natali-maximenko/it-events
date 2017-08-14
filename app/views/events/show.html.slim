@@ -1,0 +1,19 @@
+p
+  strong started_at:
+  = l(@event.started_at, format: :long)
+p
+  strong Title:
+  = @event.title
+p
+  strong Address:
+  = @event.address
+p
+  strong Text:
+  = @event.description
+p
+  = image_tag @event.cover.url
+p
+  strong link:
+  = link_to @event.link, @event.link
+= link_to t('back'), events_path
+

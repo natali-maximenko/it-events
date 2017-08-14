@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title= t 'brand'
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  body
+    = render 'header'
+    #main-container.container
+      .row
+        .col-xs-9
+          div
+            h3= content_tag :span, flash[:notice], class: "label label-warning"
+            h3= content_tag :span, flash[:alert], class: "label label-danger"
+          = yield
+        .col-sm-4.col-md-3.sidebar
+          = yield :sidebar
