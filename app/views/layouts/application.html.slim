@@ -8,12 +8,21 @@ html
     = javascript_include_tag 'application'
   body
     = render 'header'
-    #main-container.container
-      .row
-        .col-xs-9
-          div
-            h3= content_tag :span, flash[:notice], class: "label label-warning"
-            h3= content_tag :span, flash[:alert], class: "label label-danger"
-          = yield
-        .col-sm-4.col-md-3.sidebar
-          = yield :sidebar
+    #page-title.page-title.has-bg
+      .bg-cover
+        img src="/assets/cover.jpg"
+      .container
+        h1 = t('site-title')
+        p = t('site-subtitle')
+    #content.content
+      .container
+        .row.row-space-30
+          .col-md-9
+            - if flash.any?
+              div
+                h3= content_tag :span, flash[:notice], class: "label label-warning"
+                h3= content_tag :span, flash[:alert], class: "label label-danger"
+            = yield
+          .col-md-3
+            = yield :sidebar
+    = render 'footer'

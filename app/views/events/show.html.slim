@@ -1,19 +1,21 @@
-p
-  strong started_at:
-  = l(@event.started_at, format: :long)
-p
-  strong Title:
-  = @event.title
-p
-  strong Address:
-  = @event.address
-p
-  strong Text:
-  = @event.description
-p
-  = image_tag @event.cover.url
-p
-  strong link:
-  = link_to @event.link, @event.link
-= link_to t('back'), events_path
-
+.post-detail.section-container
+  ul.breadcrumb
+    li= link_to 'Home', root_path
+    li= link_to t('events_list'), events_path
+    li.active= @event.title
+  h4.post-title= @event.title
+  .post-by
+    a href="#" organizer
+    span.divider |
+    =' fa_icon("calendar lg")
+    = l(@event.started_at, format: :long)
+  .post-desc
+    = image_tag @event.cover.url
+  .post-desc
+    p= @event.description
+    p
+      =' fa_icon("address-card lg")
+      = @event.address
+    p
+      =' fa_icon("link lg")
+      = link_to @event.link, @event.link

@@ -33,6 +33,9 @@ ru:
   start_date: 'С'
   end_date: 'По'
   address: 'Адрес'
+  copyright: 2017 Наталья Максименко
+  site-title: События в сфере информационных технологий
+  site-subtitle: организуемые по всей России
 
   will_paginate:
     previous_label: "&#8592; Назад"
