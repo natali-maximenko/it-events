@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title= t 'brand'
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  body
+    = render 'header'
+    #page-title.page-title.has-bg
+      .bg-cover
+        img src="/assets/cover.jpg"
+      .container
+        h1 = t('site-title')
+        p = t('site-subtitle')
+    #content.content
+      .container
+        .row.row-space-30
+          .col-md-9
+            - if flash.any?
+              div
+                h3= content_tag :span, flash[:notice], class: "label label-warning"
+                h3= content_tag :span, flash[:alert], class: "label label-danger"
+            = yield
+          .col-md-3
+            = yield :sidebar
+    = render 'footer'

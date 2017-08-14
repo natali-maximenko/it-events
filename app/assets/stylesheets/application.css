@@ -10,12 +10,27 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require jquery-ui/datepicker
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
-body {
-  min-height: 2000px;
-  padding-top: 70px;
+
+a,
+.navbar .nav.navbar-nav > li.active > a,
+.navbar .nav.navbar-nav > li > a:focus,
+.navbar .nav.navbar-nav > li > a:hover {
+    color: #ff5b57;
+}
+a:hover,
+a:focus {
+    color: #cc4946;
+}
+
+.icon-ruby {
+    float: left;
+    max-width: 3rem;
+    margin-right: 5px;
 }
 
 .apple_pagination {
@@ -59,29 +74,8 @@ body {
     border-radius: 4px;
 }
 
-.album {
-  min-height: 50rem; /* Can be removed; just added for demo purposes */
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: #f7f7f7;
-}
-
-.card {
-  float: left;
-  width: 33.333%;
-  padding: .75rem;
-  margin-bottom: 2rem;
-  border: 0;
-}
-
-.card > img {
-  margin-bottom: .75rem;
-  width: 250px;
-  display: block;
-}
-
-.card-text {
-  font-size: 85%;
+.icons {
+    margin-right: 20px;
 }
 
 .btn-secondary {

@@ -1,0 +1,10 @@
+#header.header.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      a.navbar-brand href="/"
+        span
+          img.icon-ruby src="/assets/ruby.png"
+        span.brand-text = t('brand')
+    #header-navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li= link_to t('events_list'), events_path
