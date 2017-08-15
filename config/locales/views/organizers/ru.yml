@@ -1,0 +1,9 @@
+
+ru:
+  organizers:
+    index:
+      header: Список организаторов
+    show:
+      all: Все события
+      past: Прошедшие события
+      upcoming: Грядущие события

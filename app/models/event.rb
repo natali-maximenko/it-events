@@ -7,10 +7,12 @@ class Event < ApplicationRecord
   mount_uploader :cover, PictureUploader
   # paging
   self.per_page = 10
+  belongs_to :organizer
 
   scope :order_started_at_desc, -> { order(started_at: :desc) }
   scope :past, -> { where('started_at <= ?', Time.now).order_started_at_desc }
   scope :upcoming, -> { where('started_at > ?', Time.now).order_started_at_desc }
+  scope :last_organized, -> { where('started_at <= ?', Time.now).first }
   # filter
   scope :start_date, ->(date) { where('started_at >= ?', date) }
   scope :end_date, ->(date) { where('started_at <= ?', date) }
