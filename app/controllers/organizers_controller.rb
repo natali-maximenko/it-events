@@ -1,6 +1,6 @@
 class OrganizersController < ApplicationController
   def index
-    @organizers = Organizer.page(params[:page])
+    @organizers = Organizer.includes(:events).page(params[:page])
   end
 
   def show
