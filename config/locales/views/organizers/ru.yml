@@ -7,3 +7,7 @@ ru:
       all: Все события
       past: Прошедшие события
       upcoming: Грядущие события
+    sessions:
+      new:
+        submit: 'Войти'
+

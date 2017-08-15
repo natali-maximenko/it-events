@@ -19,7 +19,7 @@ class EventsController < ApplicationController
   private
 
   def search_params
-    params.permit(:start_date, :end_date, :address)
+    params.permit(:start_date, :end_date, :address, :organizer)
   end
 
   def find_event

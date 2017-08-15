@@ -17,6 +17,7 @@ class Event < ApplicationRecord
   scope :start_date, ->(date) { where('started_at >= ?', date) }
   scope :end_date, ->(date) { where('started_at <= ?', date) }
   scope :address, ->(address) { where('address like ?', "%#{address.strip}%") }
+  scope :organizer, ->(organizer) { joins(:organizer).where('organizers.name ilike ?', "%#{organizer.strip.downcase}%") }
 
   def self.filter(attrs)
     events = order_started_at_desc

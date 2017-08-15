@@ -2,15 +2,15 @@
   = content_tag :label do
     = t('start_date')
     ' :
-    =' text_field_tag :start_date, params[:start_date], class: "form-control datepicker"
+    => text_field_tag :start_date, params[:start_date], class: "form-control datepicker"
   = content_tag :label do
     = t('end_date')
     ' :
-    =' text_field_tag :end_date, params[:end_date], class: "form-control datepicker"
+    => text_field_tag :end_date, params[:end_date], class: "form-control datepicker"
   = content_tag :label do
     = t('address')
     ' :
-    =' text_field_tag :address, params[:address], class: "form-control"
+    => text_field_tag :address, params[:address], class: "form-control"
   = submit_tag t('search'), class: 'btn btn-success'
 table.table.table-striped
   thead

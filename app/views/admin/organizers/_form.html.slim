@@ -1,0 +1,12 @@
+= simple_form_for ([:admin, @org]), html: { class: 'form-horizontal' } do |f|
+  - if @org.errors.any?
+    #error_explanation
+      h2
+        = t('activerecord.errors.messages.record_invalid', errors: @org.errors.count)
+      ul
+        - @org.errors.full_messages.each do |msg|
+          li= msg
+  = f.input :name, label: t('.name')
+  = f.input :description, label: t('.description')
+  .actions.form-group
+    = f.button :submit, t('.save')

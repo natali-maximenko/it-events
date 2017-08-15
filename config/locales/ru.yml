@@ -15,6 +15,8 @@ ru:
   event: 'Событие'
   signup: 'Регистрация'
   login: 'Войти'
+  forgot: 'Забыли пароль?'
+  remember_me: 'Запомнить меня'
   create: 'Создать'
   show: 'Просмотр'
   edit: 'Изменить'
@@ -37,6 +39,7 @@ ru:
   start_date: 'С'
   end_date: 'По'
   address: 'Адрес'
+  organizer: 'Организатор'
   copyright: 2017 Наталья Максименко
   site-title: События в сфере информационных технологий
   site-subtitle: организуемые по всей России

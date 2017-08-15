@@ -1,0 +1,12 @@
+
+ru:
+  admin:
+    organizers:
+      edit:
+        header: Профиль
+      form:
+        name: Название/Имя
+        description: Описание
+        create: Создать
+        save: Сохранить
+        update: Сохранить

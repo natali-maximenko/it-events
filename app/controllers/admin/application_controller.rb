@@ -1,3 +1,3 @@
 class Admin::ApplicationController < ApplicationController
-  before_filter :authenticate_organizer!
+  before_action :authenticate_organizer!
 end

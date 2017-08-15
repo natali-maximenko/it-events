@@ -2,15 +2,19 @@
   = content_tag :label do
     = t('start_date')
     ' :
-    =' text_field_tag :start_date, params[:start_date], class: "form-control datepicker"
+    => text_field_tag :start_date, params[:start_date], class: "form-control datepicker"
   = content_tag :label do
     = t('end_date')
     ' :
-    =' text_field_tag :end_date, params[:end_date], class: "form-control datepicker"
+    => text_field_tag :end_date, params[:end_date], class: "form-control datepicker"
   = content_tag :label do
     = t('address')
     ' :
-    =' text_field_tag :address, params[:address], class: "form-control"
+    => text_field_tag :address, params[:address], class: "form-control"
+  = content_tag :label do
+    = t('organizer')
+    ' :
+    => text_field_tag :organizer, params[:organizer], class: "form-control"
   = submit_tag t('search'), class: 'btn btn-success'
 br
 - @events.each do |event|
@@ -21,7 +25,7 @@ br
       .media-body
         h4.media-heading= event.title
         p.text-right
-          =' fa_icon "calendar lg"
+          => fa_icon "calendar lg"
           = l(event.started_at, format: :long)
         p= event.address
         p= event.organizer.name

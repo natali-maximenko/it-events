@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :organizers, only: [:show, :index]
 
   namespace :admin do
-    #resources :organizers, only: [:show, :edit, :update]
+    resources :organizers, only: [:edit, :update]
     resources :events, only: [:index, :new, :create, :edit, :update]
     get '/events', to: 'events#index', as: :organizer_root
   end
