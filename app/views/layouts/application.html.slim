@@ -9,8 +9,7 @@ html
   body
     = render 'header'
     #page-title.page-title.has-bg
-      .bg-cover
-        img src="/assets/cover.jpg"
+      .bg-cover= image_tag "cover.jpg"
       .container
         h1 = t('site-title')
         p = t('site-subtitle')
