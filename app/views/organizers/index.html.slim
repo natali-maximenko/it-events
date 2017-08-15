@@ -9,9 +9,6 @@ h3= t '.header'
           p
             = t('event_count')
             = org.events.size
-          p
-            = t('last_event')
-            = link_to(org.events.last_organized.title, event_path(org.events.last_organized))
 .section-container
   .pagination-container.text-center
     .apple_pagination
