@@ -22,11 +22,11 @@
   .actions.form-group
     = f.button :submit, @event.new_record? ? t('.create') : t('.save')
 javascript:
-  | $("#event_address").suggestions({
-      | token: "#{ENV['DADATA_API_KEY']}",
-      | type: "ADDRESS",
-      | onSelect: function(suggestion) {
-          | console.log(suggestion);
-      | }
-  | });
+  $("#event_address").suggestions({
+      token: "#{ENV['DADATA_API_KEY']}",
+      type: "ADDRESS",
+      onSelect: function(suggestion) {
+          console.log(suggestion);
+      }
+  });
 
