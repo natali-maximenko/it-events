@@ -9,13 +9,13 @@
     span.divider |
     =' fa_icon("calendar lg")
     = l(@event.started_at, format: :long)
+    span.divider |
+    =' fa_icon("address-card lg")
+    = @event.address
+    span.divider |
+    =' fa_icon("link lg")
+    = link_to @event.link, @event.link
   .post-desc
     = image_tag @event.cover.url
   .post-desc
-    p= @event.description
-    p
-      =' fa_icon("address-card lg")
-      = @event.address
-    p
-      =' fa_icon("link lg")
-      = link_to @event.link, @event.link
+    p== @event.description
