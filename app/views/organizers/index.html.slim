@@ -3,7 +3,8 @@ h3= t '.header'
  .well
    .media
       .media-body
-        h4.media-heading= link_to org.name, organizer_path(org)
+        h4.media-heading
+          = link_to org.name, organizer_path(org)
         - unless org.events.empty?
           p
             = t('event_count')
