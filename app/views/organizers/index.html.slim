@@ -4,7 +4,7 @@ h3= t '.header'
    .media
       .media-body
         h4.media-heading= link_to org.name, organizer_path(org)
-        - if org.events.any?
+        - unless org.events.empty?
           p
             = t('event_count')
             = org.events.size
