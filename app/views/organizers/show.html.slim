@@ -1,0 +1,19 @@
+.post-detail.section-container
+  ul.breadcrumb
+    li= link_to 'Home', root_path
+    li= link_to t('orgs_list'), organizers_path
+    li.active= @org.name
+  h4.post-title= @org.name
+  .post-desc
+    =' fa_icon('envelope lg')
+    = @org.email
+  .post-desc
+    p== @org.description
+  h4= t('.past')
+  .post-desc
+    - @org.events.past.each do |event|
+      p=link_to event.title, event_path(event)
+  h4= t('.upcoming')
+  .post-desc
+    - @org.events.upcoming.each do |event|
+      p=link_to event.title, event_path(event)

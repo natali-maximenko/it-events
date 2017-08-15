@@ -16,6 +16,10 @@
  *= require_self
  */
 
+#content {
+  min-height: 800px;
+}
+
 a,
 .navbar .nav.navbar-nav > li.active > a,
 .navbar .nav.navbar-nav > li > a:focus,

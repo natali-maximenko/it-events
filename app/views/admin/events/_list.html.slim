@@ -11,28 +11,28 @@
     = t('address')
     ' :
     => text_field_tag :address, params[:address], class: "form-control"
-  = content_tag :label do
-    = t('organizer')
-    ' :
-    => text_field_tag :organizer, params[:organizer], class: "form-control"
   = submit_tag t('search'), class: 'btn btn-success'
-br
-- @events.each do |event|
- .well
-   .media
-      a.pull-left href="#{event_path(event)}"
-        = image_tag event.cover.thumb.url
-      .media-body
-        h4.media-heading= event.title
-        p.text-right
-          => fa_icon "calendar lg"
-          = l(event.started_at, format: :long)
-        p= event.address
-        p= event.organizer.name
-.section-container
-  .pagination-container.text-center
-    .apple_pagination
-      = will_paginate @events
+table.table.table-striped
+  thead
+    tr
+      th
+      th
+      th colspan="3"
+  tbody
+    - @events.each do |event|
+      tr
+        td= l(event.started_at, format: :short)
+        td= event.title
+        td
+          ul.list-inline.list-unstyled
+            li
+              = link_to fa_icon('eye'), event_path(event)
+            li
+              = link_to fa_icon('pencil'), edit_admin_event_path(event)
+            li
+              = link_to fa_icon('trash'), admin_event_path(event), method: :delete, data: { confirm: t('confirm') }
+.apple_pagination
+  = will_paginate @events
 javascript:
   $('.datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
   $('.datepicker').datepicker( $.datepicker.regional[ "ru" ] );

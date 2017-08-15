@@ -5,7 +5,8 @@
     li.active= @event.title
   h4.post-title= @event.title
   .post-by
-    a href="#" organizer
+    =' fa_icon("user lg")
+    = link_to @event.organizer.name, organizer_path(@event.organizer)
     span.divider |
     =' fa_icon("calendar lg")
     = l(@event.started_at, format: :long)
